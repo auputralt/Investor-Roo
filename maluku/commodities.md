@@ -9,6 +9,7 @@ commodities_url: "/maluku/commodities/"
 programs_url: "/maluku/programs/"
 show_quick_nav: true
 active_tab: "commodities"
+permalink: /maluku/commodities/
 ---
 
 <section class="section-sm">

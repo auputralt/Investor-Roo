@@ -9,6 +9,7 @@ commodities_url: "/lampung-utara/commodities/"
 programs_url: "/lampung-utara/programs/"
 show_quick_nav: true
 active_tab: "programs"
+permalink: /lampung-utara/programs/
 ---
 
 <section class="section-sm">

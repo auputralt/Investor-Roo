@@ -9,6 +9,7 @@ commodities_url: "/maluku/commodities/"
 programs_url: "/maluku/programs/"
 show_quick_nav: true
 active_tab: "overview"
+permalink: /maluku/
 ---
 
 <!-- Regional Profile -->
