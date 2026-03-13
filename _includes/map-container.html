@@ -21,7 +21,7 @@
   <div class="map-legend">
     {% for item in include.legend %}
     <div class="legend-item">
-      <span class="legend-color" style="background-color: {{ item.color }};"></span>
+      <span class="legend-color" data-color="{{ item.color }}"></span>
       <span class="legend-label">{{ item.label }}</span>
     </div>
     {% endfor %}
@@ -32,3 +32,15 @@
   <p class="map-footnote">{{ include.footnote }}</p>
   {% endif %}
 </div>
+
+<script>
+  // Apply dynamic legend colors from data attributes.
+  (function () {
+    var root = document.querySelector('[data-map-id="{{ include.id }}"]');
+    if (!root) return;
+    var colorItems = root.querySelectorAll('.legend-color[data-color]');
+    colorItems.forEach(function (el) {
+      el.style.backgroundColor = el.getAttribute('data-color') || '';
+    });
+  })();
+</script>

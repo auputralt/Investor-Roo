@@ -17,13 +17,26 @@
   {% endif %}
 </div>
 
+<script type="application/json" id="chart-data-{{ include.id }}">
+{{
+  {
+    "type": include.type,
+    "labels": include.labels,
+    "datasets": include.datasets,
+    "options": include.options | default: {}
+  } | jsonify
+}}
+</script>
 <script>
-  // Chart data for {{ include.id }}
+  // Load chart data from JSON script so Liquid doesn't break JS parsing in editors.
   window.chartData = window.chartData || {};
-  window.chartData['{{ include.id }}'] = {
-    type: '{{ include.type }}',
-    labels: {{ include.labels | jsonify }},
-    datasets: {{ include.datasets | jsonify }},
-    options: {{ include.options | default: {} | jsonify }}
-  };
+  (function () {
+    var dataEl = document.getElementById('chart-data-{{ include.id }}');
+    if (!dataEl) return;
+    try {
+      window.chartData['{{ include.id }}'] = JSON.parse(dataEl.textContent);
+    } catch (e) {
+      console.error('Invalid chart data for {{ include.id }}', e);
+    }
+  })();
 </script>
