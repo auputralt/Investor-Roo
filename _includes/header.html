@@ -1,0 +1,77 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logo / Site Title -->
+      <a href="{{ '/' | relative_url }}" class="site-logo">
+        <span class="logo-icon">
+          <i class="fas fa-leaf"></i>
+        </span>
+        <span class="logo-text">
+          <span class="logo-title">AgriInvest</span>
+          <span class="logo-subtitle">Indonesia</span>
+        </span>
+      </a>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      
+      <!-- Main Navigation -->
+      <nav class="main-nav" role="navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+          </li>
+          
+          <li class="nav-item has-dropdown">
+            <a href="{{ '/lampung-utara/' | relative_url }}" class="nav-link {% if page.url contains '/lampung-utara/' %}active{% endif %}">
+              <i class="fas fa-map-marker-alt"></i>
+              Lampung Utara
+              <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ '/lampung-utara/' | relative_url }}">Overview</a></li>
+              <li><a href="{{ '/lampung-utara/commodities/' | relative_url }}">Commodities</a></li>
+              <li><a href="{{ '/lampung-utara/programs/' | relative_url }}">Programs</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item has-dropdown">
+            <a href="{{ '/maluku/' | relative_url }}" class="nav-link {% if page.url contains '/maluku/' %}active{% endif %}">
+              <i class="fas fa-map-marker-alt"></i>
+              Maluku
+              <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ '/maluku/' | relative_url }}">Overview</a></li>
+              <li><a href="{{ '/maluku/commodities/' | relative_url }}">Commodities</a></li>
+              <li><a href="{{ '/maluku/programs/' | relative_url }}">Programs</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ '/roadmap/' | relative_url }}" class="nav-link {% if page.url contains '/roadmap/' %}active{% endif %}">
+              <i class="fas fa-road"></i>
+              Roadmap
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ '/about/' | relative_url }}" class="nav-link {% if page.url contains '/about/' %}active{% endif %}">
+              <i class="fas fa-info-circle"></i>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

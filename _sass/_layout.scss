@@ -1,0 +1,374 @@
+// =============================================================================
+// Layout - Container, Grid, Page Structure
+// =============================================================================
+
+@use 'variables' as *;
+
+// -----------------------------------------------------------------------------
+// Container
+// -----------------------------------------------------------------------------
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 $spacing-sm;
+  }
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.container-wide {
+  max-width: 1400px;
+}
+
+// -----------------------------------------------------------------------------
+// Grid System
+// -----------------------------------------------------------------------------
+
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+  
+  &.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+    
+    @media (max-width: $breakpoint-xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Flexbox utilities
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-sm {
+  gap: $spacing-sm;
+}
+
+.gap-md {
+  gap: $spacing-md;
+}
+
+.gap-lg {
+  gap: $spacing-lg;
+}
+
+.gap-xl {
+  gap: $spacing-xl;
+}
+
+// -----------------------------------------------------------------------------
+// Page Structure
+// -----------------------------------------------------------------------------
+
+.main-content {
+  min-height: calc(100vh - #{$header-height} - 200px); // Account for header and footer
+  padding-top: $header-height;
+  
+  @media (max-width: $breakpoint-md) {
+    padding-top: $header-height-mobile;
+  }
+}
+
+// Section spacing
+.section {
+  padding: $spacing-3xl 0;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.section-sm {
+  padding: $spacing-xl 0;
+}
+
+.section-lg {
+  padding: $spacing-4xl 0;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-3xl 0;
+  }
+}
+
+// Section backgrounds
+.section-light {
+  background-color: $color-white;
+}
+
+.section-cream {
+  background-color: $color-cream;
+}
+
+.section-dark {
+  background-color: $color-primary;
+  color: $color-white;
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-white;
+  }
+  
+  a {
+    color: $color-accent-light;
+    
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Page Header
+// -----------------------------------------------------------------------------
+
+.page-header {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-white;
+  padding: $spacing-2xl 0;
+  text-align: center;
+  
+  .page-title {
+    color: $color-white;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .page-subtitle {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.page-content {
+  padding: $spacing-2xl 0;
+}
+
+// -----------------------------------------------------------------------------
+// Region Header
+// -----------------------------------------------------------------------------
+
+.region-header {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-white;
+  padding: $spacing-xl 0 $spacing-lg;
+  
+  &[data-region="maluku"] {
+    background: linear-gradient(135deg, $color-maluku 0%, lighten($color-maluku, 10%) 100%);
+  }
+  
+  .region-breadcrumb {
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-sm;
+    opacity: 0.8;
+    
+    a {
+      color: $color-white;
+      opacity: 0.8;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+    
+    .separator {
+      margin: 0 $spacing-xs;
+    }
+  }
+  
+  .region-title {
+    color: $color-white;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .region-subtitle {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Region Quick Nav
+// -----------------------------------------------------------------------------
+
+.region-quick-nav {
+  background-color: $color-white;
+  border-bottom: $border-width solid $border-color;
+  position: sticky;
+  top: $header-height;
+  z-index: $z-index-sticky;
+  
+  @media (max-width: $breakpoint-md) {
+    top: $header-height-mobile;
+  }
+}
+
+.quick-nav-tabs {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  
+  .quick-nav-tab {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: $spacing-md $spacing-lg;
+    color: $color-gray;
+    font-weight: $font-weight-medium;
+    border-bottom: 3px solid transparent;
+    transition: all $transition-fast;
+    white-space: nowrap;
+    
+    i {
+      font-size: $font-size-sm;
+    }
+    
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.05);
+    }
+    
+    &.active {
+      color: $color-primary;
+      border-bottom-color: $color-primary;
+    }
+  }
+}
+
+.region-content {
+  padding: $spacing-2xl 0;
+}
+
+// -----------------------------------------------------------------------------
+// Two Column Layout
+// -----------------------------------------------------------------------------
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: $spacing-xl;
+  
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-column {
+    min-width: 0;
+  }
+  
+  .sidebar {
+    @media (max-width: $breakpoint-lg) {
+      order: -1;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Spacer utilities
+// -----------------------------------------------------------------------------
+
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+.mt-2xl { margin-top: $spacing-2xl; }
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+.mb-2xl { margin-bottom: $spacing-2xl; }
+
+.pt-sm { padding-top: $spacing-sm; }
+.pt-md { padding-top: $spacing-md; }
+.pt-lg { padding-top: $spacing-lg; }
+.pt-xl { padding-top: $spacing-xl; }
+
+.pb-sm { padding-bottom: $spacing-sm; }
+.pb-md { padding-bottom: $spacing-md; }
+.pb-lg { padding-bottom: $spacing-lg; }
+.pb-xl { padding-bottom: $spacing-xl; }

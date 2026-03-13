@@ -1,0 +1,44 @@
+<div class="program-table-wrapper">
+  <table class="program-table">
+    <thead>
+      <tr>
+        <th>Program / Scheme</th>
+        <th>Main Directorate</th>
+        <th>What It Offers</th>
+        <th>Eligibility & Notes</th>
+        <th>Relevance</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for program in include.programs %}
+      <tr class="program-row" data-program="{{ program.slug }}">
+        <td class="program-name">
+          <strong>{{ program.name }}</strong>
+          {% if program.description %}
+          <p class="program-description">{{ program.description }}</p>
+          {% endif %}
+        </td>
+        <td class="program-directorate">
+          <span class="directorate-badge">{{ program.directorate }}</span>
+        </td>
+        <td class="program-offers">
+          <ul class="offers-list">
+            {% for offer in program.offers %}
+            <li>{{ offer }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+        <td class="program-eligibility">
+          <p>{{ program.eligibility }}</p>
+          {% if program.status %}
+          <span class="status-badge status-{{ program.status | downcase }}">{{ program.status }}</span>
+          {% endif %}
+        </td>
+        <td class="program-relevance">
+          <p>{{ program.relevance }}</p>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,8 @@
+---
+# Main SCSS file that imports all partials
+---
+
+@import 'variables';
+@import 'base';
+@import 'layout';
+@import 'components';

@@ -1,0 +1,66 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- About Column -->
+      <div class="footer-column">
+        <div class="footer-brand">
+          <span class="logo-icon">
+            <i class="fas fa-leaf"></i>
+          </span>
+          <span class="logo-text">
+            <span class="logo-title">AgriInvest</span>
+            <span class="logo-subtitle">Indonesia</span>
+          </span>
+        </div>
+        <p class="footer-description">
+          Strategic agricultural investment opportunities in Lampung Utara and Maluku provinces, aligned with Kementerian Pertanian programs and RPJMN 2025-2029 priorities.
+        </p>
+      </div>
+      
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/lampung-utara/' | relative_url }}">Lampung Utara</a></li>
+          <li><a href="{{ '/maluku/' | relative_url }}">Maluku</a></li>
+          <li><a href="{{ '/roadmap/' | relative_url }}">Roadmap</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        </ul>
+      </div>
+      
+      <!-- Regions Column -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Regions</h4>
+        <ul class="footer-links">
+          <li><a href="{{ '/lampung-utara/commodities/' | relative_url }}">Lampung Utara Commodities</a></li>
+          <li><a href="{{ '/lampung-utara/programs/' | relative_url }}">Lampung Utara Programs</a></li>
+          <li><a href="{{ '/maluku/commodities/' | relative_url }}">Maluku Commodities</a></li>
+          <li><a href="{{ '/maluku/programs/' | relative_url }}">Maluku Programs</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Column -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Key Programs</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.pertanian.go.id" target="_blank" rel="noopener">Kementerian Pertanian</a></li>
+          <li><a href="#">Food Estate Program</a></li>
+          <li><a href="#">DG Tanaman Pangan</a></li>
+          <li><a href="#">DG Perkebunan</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          &copy; {{ 'now' | date: "%Y" }} AgriInvest Indonesia. All rights reserved.
+        </p>
+        <p class="last-updated">
+          Last updated: {{ 'now' | date: "%B %Y" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

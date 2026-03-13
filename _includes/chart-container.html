@@ -1,0 +1,29 @@
+<div class="chart-container" data-chart-type="{{ include.type }}" data-chart-id="{{ include.id }}">
+  {% if include.title %}
+  <div class="chart-header">
+    <h4 class="chart-title">{{ include.title }}</h4>
+    {% if include.subtitle %}
+    <p class="chart-subtitle">{{ include.subtitle }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  <div class="chart-wrapper">
+    <canvas id="chart-{{ include.id }}"></canvas>
+  </div>
+  
+  {% if include.footnote %}
+  <p class="chart-footnote">{{ include.footnote }}</p>
+  {% endif %}
+</div>
+
+<script>
+  // Chart data for {{ include.id }}
+  window.chartData = window.chartData || {};
+  window.chartData['{{ include.id }}'] = {
+    type: '{{ include.type }}',
+    labels: {{ include.labels | jsonify }},
+    datasets: {{ include.datasets | jsonify }},
+    options: {{ include.options | default: {} | jsonify }}
+  };
+</script>

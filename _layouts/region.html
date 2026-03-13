@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<section class="region-header" data-region="{{ page.region_slug | default: 'default' }}">
+  <div class="container">
+    <div class="region-breadcrumb">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <span class="separator">/</span>
+      <span>{{ page.region }}</span>
+    </div>
+    <h1 class="region-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="region-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% if page.show_quick_nav %}
+<section class="region-quick-nav">
+  <div class="container">
+    <nav class="quick-nav-tabs">
+      <a href="{{ page.region_url | relative_url }}" class="quick-nav-tab {% if page.active_tab == 'overview' %}active{% endif %}">
+        <i class="fas fa-map-marked-alt"></i>
+        Overview
+      </a>
+      <a href="{{ page.commodities_url | relative_url }}" class="quick-nav-tab {% if page.active_tab == 'commodities' %}active{% endif %}">
+        <i class="fas fa-seedling"></i>
+        Commodities
+      </a>
+      <a href="{{ page.programs_url | relative_url }}" class="quick-nav-tab {% if page.active_tab == 'programs' %}active{% endif %}">
+        <i class="fas fa-handshake"></i>
+        Programs
+      </a>
+    </nav>
+  </div>
+</section>
+{% endif %}
+
+<section class="region-content">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>

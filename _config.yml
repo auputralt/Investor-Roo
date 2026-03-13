@@ -1,0 +1,92 @@
+# AgriInvest Indonesia - Jekyll Configuration
+# Agricultural Investment Strategy Website
+
+# Site Settings
+title: AgriInvest Indonesia
+description: Strategic Agricultural Investment Opportunities in Lampung Utara & Maluku
+author: AgriInvest Team
+lang: en-US
+
+# URL Settings (update for production)
+url: "" # Add your GitHub Pages URL here, e.g., "https://username.github.io"
+baseurl: "" # Add repository name if not using username.github.io, e.g., "/agri-investment"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections (if needed for future expansion)
+collections_dir: collections
+
+# Default values
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "lampung-utara"
+      type: "pages"
+    values:
+      layout: "region"
+      region: "Lampung Utara"
+  - scope:
+      path: "maluku"
+      type: "pages"
+    values:
+      layout: "region"
+      region: "Maluku"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Lampung Utara"
+    url: "/lampung-utara/"
+    submenu:
+      - title: "Overview"
+        url: "/lampung-utara/"
+      - title: "Commodities"
+        url: "/lampung-utara/commodities/"
+      - title: "Programs"
+        url: "/lampung-utara/programs/"
+  - title: "Maluku"
+    url: "/maluku/"
+    submenu:
+      - title: "Overview"
+        url: "/maluku/"
+      - title: "Commodities"
+        url: "/maluku/commodities/"
+      - title: "Programs"
+        url: "/maluku/programs/"
+  - title: "Roadmap"
+    url: "/roadmap/"
+  - title: "About"
+    url: "/about/"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - ARCHITECTURE_PLAN.md
+
+# Include these files/directories
+include:
+  - _pages
+
+# Sass/SCSS Settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Timezone
+timezone: Asia/Jakarta

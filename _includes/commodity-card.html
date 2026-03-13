@@ -1,0 +1,58 @@
+<div class="commodity-card" data-commodity="{{ include.slug }}">
+  <div class="commodity-header">
+    <div class="commodity-icon">
+      <i class="{{ include.icon }}"></i>
+    </div>
+    <div class="commodity-title-group">
+      <h3 class="commodity-name">{{ include.name }}</h3>
+      {% if include.local_name %}
+      <span class="commodity-local-name">{{ include.local_name }}</span>
+      {% endif %}
+    </div>
+  </div>
+  
+  <div class="commodity-body">
+    <div class="commodity-status">
+      <span class="status-label">Status:</span>
+      <span class="status-value status-{{ include.status | downcase | replace: ' ', '-' }}">{{ include.status }}</span>
+    </div>
+    
+    {% if include.fit %}
+    <div class="commodity-detail">
+      <span class="detail-label"><i class="fas fa-check-circle"></i> Fit:</span>
+      <p class="detail-text">{{ include.fit }}</p>
+    </div>
+    {% endif %}
+    
+    {% if include.market %}
+    <div class="commodity-detail">
+      <span class="detail-label"><i class="fas fa-chart-line"></i> Market:</span>
+      <p class="detail-text">{{ include.market }}</p>
+    </div>
+    {% endif %}
+    
+    <div class="commodity-metrics">
+      {% if include.yield %}
+      <div class="metric">
+        <span class="metric-label">Yield Potential</span>
+        <span class="metric-value">{{ include.yield }}</span>
+      </div>
+      {% endif %}
+      
+      {% if include.roi %}
+      <div class="metric">
+        <span class="metric-label">ROI Horizon</span>
+        <span class="metric-value">{{ include.roi }}</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% if include.link %}
+  <div class="commodity-footer">
+    <a href="{{ include.link }}" class="commodity-link">
+      View Details <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+  {% endif %}
+</div>

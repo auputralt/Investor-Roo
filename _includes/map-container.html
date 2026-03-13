@@ -1,0 +1,34 @@
+<div class="map-container" data-map-id="{{ include.id }}">
+  {% if include.title %}
+  <div class="map-header">
+    <h4 class="map-title">{{ include.title }}</h4>
+    {% if include.subtitle %}
+    <p class="map-subtitle">{{ include.subtitle }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  <div class="map-wrapper">
+    <div id="map-{{ include.id }}" class="map-canvas" 
+         data-lat="{{ include.lat | default: -2.5 }}" 
+         data-lng="{{ include.lng | default: 118.0 }}" 
+         data-zoom="{{ include.zoom | default: 5 }}"
+         data-region="{{ include.region | default: 'indonesia' }}">
+    </div>
+  </div>
+  
+  {% if include.legend %}
+  <div class="map-legend">
+    {% for item in include.legend %}
+    <div class="legend-item">
+      <span class="legend-color" style="background-color: {{ item.color }};"></span>
+      <span class="legend-label">{{ item.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  {% if include.footnote %}
+  <p class="map-footnote">{{ include.footnote }}</p>
+  {% endif %}
+</div>
