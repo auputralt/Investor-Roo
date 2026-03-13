@@ -7,9 +7,9 @@ description: Strategic Agricultural Investment Opportunities in Lampung Utara & 
 author: AgriInvest Team
 lang: en-US
 
-# URL Settings (update for production)
-url: "" # Add your GitHub Pages URL here, e.g., "https://username.github.io"
-baseurl: "" # Add repository name if not using username.github.io, e.g., "/agri-investment"
+# URL Settings (production)
+url: "https://auputralt.github.io"
+baseurl: "/Investor-Roo"
 
 # Build Settings
 markdown: kramdown
